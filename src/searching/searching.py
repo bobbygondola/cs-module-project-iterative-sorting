@@ -1,20 +1,13 @@
 
 
 # go index ++ until we find the target
-pos = -1
-
 def linear_search(arr, target):
-    # 1. create a loop and counter
-    i = 0
-    
-    # make a while loop
-    while i < len(arr):
+    # Your code here
+    for i in range(0, len(arr)):
         if arr[i] == target:
-            globals()['pos'] = i
-            return arr[i]
-        i = i + 1
-    
-    return -1   # not found
+            return i
+
+    return -1  # not found
 
 
 
@@ -40,7 +33,7 @@ def binary_search(arr, target):
 
         if target < arr[mid]:
             high = mid - 1
-            
+        
         if target > arr[mid]:
             low = mid + 1
         
