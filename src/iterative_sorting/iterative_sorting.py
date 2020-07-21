@@ -1,27 +1,41 @@
-# TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
-
+    # 1. exterior for loop, which we use to compare neighbors
+    for i in range(len(arr) -1):
+        lowest = i
+        # 2. neighbor for loop
+        for j in range(i + 1,len(arr)):
+            # 3. compare neighbors if greator
+            if arr[j] < arr[lowest]:
+                lowest = j
+        # 4. swap
+        arr[i], arr[lowest] = arr[lowest], arr[i]
     return arr
+arr = [5,10,15]
+print(selection_sort(arr))
 
+'''BUBBLE SORT'''
 
-# TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
-
+    # exterior for loop, through array
+    for i in range(len(arr) -1):
+        # interior for loop, through array
+        for j in range(i + 1, len(arr)):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
     return arr
-
+    
+    '''first approach'''
+    # swaps_occured = True
+    # while swaps_occured:
+    #     swaps_occured = False
+    #     for i in range(0, len(arr)-1):
+    #         # compare elements
+    #         if arr[i] > arr[i+1]:
+    #             # swap elements
+    #             arr[i], arr[i+1] = arr[i+1], arr[i]
+    #             # if a swap can happen, set swaps_occured to TRUE to run again
+    #             swaps_occured = True
+    # return arr
 '''
 STRETCH: implement the Counting Sort function below
 
